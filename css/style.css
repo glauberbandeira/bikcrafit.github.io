@@ -1,0 +1,103 @@
+/* resetando alguns estilos iniciais */
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+/* ************************************** */
+
+.header-bg {
+  background: #000000;
+}
+.header {
+  /* Marca de um lado menu para outro */
+  display: flex;
+  /* para quebrar para baixo */
+  flex-wrap: wrap;
+  gap: 20px;
+  /* cada um na ponta */
+  justify-content: space-between;
+  /* alinha ao centro na vertical */
+  align-items: center;
+  padding: 20px;
+  /* container */
+  max-width: 1200px;
+  /* alinha ao centro */
+  margin: auto;
+}
+
+/* Falando com a ul */
+.header-menu {
+  display: flex;
+  /* também vai quebrar para não estourar container */
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.header-menu a {
+  /* criando uma area maior de contato */
+  padding: 16px 0;
+  /*  */
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1.125rem;
+  /* position relativa referente ao absolute */
+  position: relative;
+}
+/* Criando elemento after */
+.header-menu a:after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: #fff;
+  margin-top: 4px;
+  /* retirando o after do fluxo */
+  position: absolute;
+}
+.header-menu a:hover:after {
+  width: 100%;
+  transition: 0.3s;
+}
+
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px;
+  }
+  .header-menu a {
+    background: #111111;
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+  .header-menu a:hover {
+    background-color: #3e3e3e;
+  }
+  .header a:after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-menu {
+    gap: 12px;
+  }
+  .header-menu a {
+    padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+}
